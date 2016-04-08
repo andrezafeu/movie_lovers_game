@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Movie Lovers</title>
+</head>
+<body>
+
+	<h1>Your search returned:</h1>
+ 
+		<% @search_array.each do |movie| %>
+			<h3><%= movie.title %></h3>
+		<% end %>
+
+	<br><br><br><br><br>
+
+</body>
+</html>

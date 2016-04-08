@@ -4,7 +4,7 @@
 </head>
 <body>
 
-	<h1>Your search returned:</h1>
+	<h1>Your search returned these movies. Which one of them was created on <%=  @trivia_year[0] %>?</h1>
  
 		<% @search_array.each do |movie| %>
 			<img src="<%= movie.poster %>" width=200px height=300px %>

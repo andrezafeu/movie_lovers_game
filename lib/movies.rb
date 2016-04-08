@@ -1,5 +1,31 @@
 require 'imdb'
 
+class Movies
+	attr_reader :movies, :movies_years
+	def initialize
+		@movies = []
+	end
+	def search(params)
+		@params = params
+		search = Imdb::Search.new(params)
+		i=0
+		while @movies.length<9
+			if search.movies[i].poster
+				@movies.push(search.movies[i])
+			end
+			i = i + 1
+		end
+		@movies
+	end
+
+	def trivia
+		@movies_years = @movies.map { |movie| movie.year  }
+		@movies_years = @movies_years.shuffle
+		@movies_years
+	end
+
+end
+
 # class Movies
 # 	attr_reader :movies
 # 	def initialize
@@ -29,29 +55,6 @@ require 'imdb'
 # 	if Poster
 # 		store
 # 	end
-
-
-
-class Movies
-	attr_reader :movies
-	def initialize
-		@movies = []
-	end
-	def search(params)
-		@params = params
-		search = Imdb::Search.new(params)
-		i=0
-		while @movies.length<9
-			if search.movies[i].poster
-				@movies.push(search.movies[i])
-			end
-			i = i + 1
-		end
-		@movies
-	end
-end
-
-
 
 
 #First iteration code

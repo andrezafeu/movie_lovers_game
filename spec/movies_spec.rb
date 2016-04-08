@@ -13,4 +13,9 @@ RSpec.describe "Movie Lovers" do
 		end
 	end
 
+	it "Throws an error message if less than 2 movies are returned" do
+		check_error = @movie.search("alksdjflasdkjflsdkj")
+		expect(check_error).to eq("ERROR!")
+	end
+
 end

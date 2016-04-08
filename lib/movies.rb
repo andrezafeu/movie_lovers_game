@@ -1,3 +1,5 @@
+require 'imdb'
+
 # class Movies
 # 	attr_reader :movies
 # 	def initialize

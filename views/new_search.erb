@@ -7,7 +7,7 @@
 	<h1>Your search returned:</h1>
  
 		<% @search_array.each do |movie| %>
-			<h3><%= movie.title %></h3>
+			<img src="<%= movie.poster %>" width=200px height=300px %>
 		<% end %>
 
 	<br><br><br><br><br>

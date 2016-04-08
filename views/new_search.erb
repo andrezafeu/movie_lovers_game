@@ -5,6 +5,31 @@
 <body>
 
 	<h1>Your search returned these movies. Which one of them was created on <%=  @trivia_year[0] %>?</h1>
+	<h2>Click on the right answer</h2>
+		<% @search_array.each do |movie| %>
+	 		<% if movie.year == @trivia_year[0] %>
+				<img src="<%= movie.poster %>" width=200px height=300px onClick="alert('yay')"%>
+			<% else %>
+				<img src="<%= movie.poster %>" width=200px height=300px onClick="alert('nay')"%>
+			<% end %>
+		<% end %>
+
+	<br><br><br><br><br>
+
+</body>
+</html>
+
+
+
+<!-- FIRST ITERATION
+<html>
+<head>
+  <title>Movie Lovers</title>
+</head>
+<body>
+
+	<h1>Your search returned these movies. Which one of them was created on <%=  @trivia_year[0] %>?</h1>
+	<h2>Click on the right answer</h2>
  
 		<% @search_array.each do |movie| %>
 			<img src="<%= movie.poster %>" width=200px height=300px %>
@@ -13,4 +38,4 @@
 	<br><br><br><br><br>
 
 </body>
-</html>
+</html> -->

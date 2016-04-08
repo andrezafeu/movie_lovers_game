@@ -13,6 +13,7 @@ end
 
 post "/new_search" do
 	@search_array = new_search.search(params[:search_term])
+	# @error = new_search.error
 	@trivia_year = new_search.trivia	
 	erb :new_search
 end

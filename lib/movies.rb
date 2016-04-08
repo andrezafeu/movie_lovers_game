@@ -8,14 +8,34 @@ class Movies
 	def search(params)
 		@params = params
 		search = Imdb::Search.new(params)
-		i=0
-		while @movies.length<9
-			if search.movies[i].poster
-				@movies.push(search.movies[i])
+		# if search.movies.class == "array"
+
+		if search.movies == nil || search.movies.length <= 1
+			error = "ERROR!"
+			error
+		else
+			search.movies.each do |mov|
+				if mov.poster !=nil && @movies.length <9
+					@movies.push(mov)
+				end
 			end
-			i = i + 1
+			@movies
 		end
-		@movies
+
+		# if search.movies.length > 1
+		# 	search.movies.each do |mov|
+		# 		if mov.poster != nil && @movies.length < 9
+		# 			@movies.push(mov)
+		# 		end
+		# 	end
+		# end
+
+		# if @movies.length < 2
+		# 	error = "ERROR!"
+		# 	error
+		# else
+		# end
+
 	end
 
 	def trivia

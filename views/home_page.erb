@@ -1,21 +1,38 @@
-<html>
-<head>
-  <title>Movie Lovers</title>
-</head>
-<body>
+<html> 
+<head> 
 
-	<h1>Movie Lovers</h1>
+	<!-- Ensure proper rendering and touch zooming on mobile --> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<!-- Add bootstrap via cdn --> 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+	 
+  	<title>Movie Lovers</title> 
+  	 
+</head> 
+<body> 
+	<div class="container"> 
+		<div class="col-sm-12 center-block title-container"> 
+			<h1 class="text-center">Movie Lovers</h1> 
+		</div> 
 
+		<div class="form-horizontal"> 
 
-		<form action="/new_search" method="POST">
-		<label for="search">Search for:</label>
-		<input type="text" name="search_term" placeholder="Search for...">
+			<form action="/new_search" method="POST"> 
+				<div class="form-group form-group-lg"> 
+					<label for="search" class="col-sm-2 control-label">Search for:</label> 
+					<div class="col-sm-10"> 
+						<input type="text" name="search_term" placeholder="Search for movies..." class="form-control"> 
+					</div> 
+				</div> 
 
-		<button type="submit">Search!</button>
+				<button type="submit" class="btn btn-default btn-lg center-block">Search!</button> 
 
-	</form>
+			</form> 
+		</div> 
 
-	<br><br><br><br><br>
+	</div> 
 
-</body>
+</body> 
 </html>
